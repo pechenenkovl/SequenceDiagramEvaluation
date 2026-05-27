@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Content\Miller_Examen.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Content\Miller_Examen.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SequenceDiagramEvaluation.Core\SequenceDiagramEvaluation.Core.csproj" />
+    <ProjectReference Include="..\SequenceDiagramEvaluation.Parser\SequenceDiagramEvaluation.Parser.csproj" />
+  </ItemGroup>
+
+</Project>
