@@ -202,5 +202,16 @@ namespace SequenceDiagramEvaluation.UI
         public double OverallAverageRating { get; set; }
         public string OverallAverageFormatted => OverallAverageRating.ToString("F2");
         public bool IsSplitRow { get; set; }
+
+        /// <summary>
+        /// Gets the scale based on the overall average rating.
+        /// </summary>
+        public string Scale => OverallAverageRating switch
+        {
+            >= 9.1 => "Optimal",
+            >= 7.6 => "High",
+            >= 5.1 => "Medium",
+            _ => "Low"
+        };
     }
 }

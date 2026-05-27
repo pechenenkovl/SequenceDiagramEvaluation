@@ -11,6 +11,7 @@ namespace SequenceDiagramEvaluation.Core
         /// </summary>
         private static readonly Dictionary<int, int> CountRatingTable = new()
         {
+            { 0, 0 },
             { 1, 1 },
             { 2, 7 },
             { 3, 8 },
@@ -34,6 +35,7 @@ namespace SequenceDiagramEvaluation.Core
         /// </summary>
         private static readonly Dictionary<int, int> AverageMessagesRatingTable = new()
         {
+            { 0, 0 },
             { 1, 7 },
             { 2, 7 },
             { 3, 8 },
@@ -60,8 +62,8 @@ namespace SequenceDiagramEvaluation.Core
         /// <returns>Rating from 1 to 10.</returns>
         public static int GetCountRating(int count)
         {
-            if (count <= 0)
-                return 1;
+            if (count < 0)
+                return 0;
 
             if (CountRatingTable.TryGetValue(count, out var rating))
                 return rating;
@@ -80,8 +82,8 @@ namespace SequenceDiagramEvaluation.Core
             // Round to nearest integer for lookup
             var rounded = (int)Math.Round(average);
 
-            if (rounded <= 0)
-                return 1;
+            if (rounded < 0)
+                return 0;
 
             if (AverageMessagesRatingTable.TryGetValue(rounded, out var rating))
                 return rating;

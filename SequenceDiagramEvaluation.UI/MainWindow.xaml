@@ -70,6 +70,7 @@
                 <DataGridTextColumn Header="Blocks Rating" Binding="{Binding BlocksRating}" Width="Auto"/>
                 <DataGridTextColumn Header="Avg Messages Rating" Binding="{Binding AverageMessagesRating}" Width="Auto"/>
                 <DataGridTextColumn Header="Average" Binding="{Binding OverallAverageFormatted}" Width="Auto"/>
+                <DataGridTextColumn Header="Scale" Binding="{Binding Scale}" Width="Auto"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
